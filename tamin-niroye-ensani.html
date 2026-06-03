@@ -254,18 +254,16 @@ header .container { display:flex; align-items:center; justify-content:space-betw
 .benefits-list i { color:var(--accent); font-size:18px; margin-top:4px; flex-shrink:0; min-width:20px; }
 .benefits-list span { color:#555; font-size:14.5px; line-height:1.8; }
 
-/* بخش مزایای پرونسپاری برای کارفرمایان - عکس سمت چپ بیرون کادر */
+/* بخش مزایای پرونسپاری برای کارفرمایان */
 .outsourcing-benefits-wrapper {
     position: relative;
     margin-top: 50px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 30px;
 }
 
 .outsourcing-image-left {
-    position: absolute;
-    left: -280px;
     width: 280px;
     height: 400px;
     border-radius: var(--r);
@@ -312,37 +310,34 @@ header .container { display:flex; align-items:center; justify-content:space-betw
 }
 
 .outsourcing-benefits-content li::before {
-    content: '';
+    content: '\f0e0';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     position: absolute;
     right: 0;
     top: 3px;
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    color: var(--accent);
+    font-size: 16px;
 }
 
-/* آیکون‌های SVG برای هر نقطه */
 .outsourcing-benefits-content li:nth-child(1)::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23e65c00" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+    content: '\f05b';
 }
 
 .outsourcing-benefits-content li:nth-child(2)::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23e65c00" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>');
+    content: '\f508';
 }
 
 .outsourcing-benefits-content li:nth-child(3)::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23e65c00" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>');
+    content: '\f146';
 }
 
 .outsourcing-benefits-content li:nth-child(4)::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23e65c00" d="M3 13h2v8H3zm4-8h2v16H7zm4-2h2v18h-2zm4-1h2v19h-2zm4 4h2v15h-2z"/></svg>');
+    content: '\f134';
 }
 
 .outsourcing-benefits-content li:nth-child(5)::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23e65c00" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>');
+    content: '\f200';
 }
 
 .outsourcing-benefits-content li:last-child {
@@ -351,17 +346,16 @@ header .container { display:flex; align-items:center; justify-content:space-betw
 
 /* Responsive */
 @media (max-width: 1200px) {
-    .outsourcing-image-left {
-        position: relative;
-        left: 0;
-        width: 100%;
-        height: 300px;
-        margin-bottom: 20px;
-    }
-    
     .outsourcing-benefits-wrapper {
         flex-direction: column;
         gap: 20px;
+        align-items: stretch;
+    }
+    
+    .outsourcing-image-left {
+        width: 100%;
+        max-width: 350px;
+        height: 300px;
     }
 }
 
@@ -369,6 +363,7 @@ header .container { display:flex; align-items:center; justify-content:space-betw
     .outsourcing-image-left {
         width: 100%;
         height: 280px;
+        max-width: 100%;
     }
 }
 
@@ -453,6 +448,7 @@ header .container { display:flex; align-items:center; justify-content:space-betw
 
 <a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
 
+<!-- نوار بالا -->
 <div class="top-bar" role="banner" aria-label="اطلاعات تماس">
     <div class="container">
         <div class="top-right">
@@ -476,6 +472,7 @@ header .container { display:flex; align-items:center; justify-content:space-betw
     </div>
 </div>
 
+<!-- هدر -->
 <header id="site-header">
     <div class="container">
         <div class="logo">
@@ -523,6 +520,7 @@ header .container { display:flex; align-items:center; justify-content:space-betw
     </div>
 </header>
 
+<!-- منوی موبایل -->
 <div class="mob-overlay" id="mobOverlay" aria-hidden="true"></div>
 <nav class="mob-nav" id="mobNav" aria-label="منوی موبایل" aria-hidden="true">
     <button class="mob-close" id="mobClose" type="button" aria-label="بستن منو">
@@ -560,6 +558,7 @@ header .container { display:flex; align-items:center; justify-content:space-betw
     </ul>
 </nav>
 
+<!-- هیرو -->
 <section class="service-hero" aria-label="خدمات تامین نیروی انسانی SGS">
     <div class="hero-bg-placeholder" id="heroBgPlaceholder"></div>
     <img id="heroBgImg" class="hero-bg-img" src="" alt="" aria-hidden="true" style="display:none;">
@@ -579,9 +578,11 @@ header .container { display:flex; align-items:center; justify-content:space-betw
     </div>
 </section>
 
+<!-- محتوا -->
 <main id="main-content">
     <div class="container content-layout">
 
+        <!-- ستون اصلی -->
         <div class="main-content">
 
             <div class="intro-box">
@@ -635,7 +636,7 @@ header .container { display:flex; align-items:center; justify-content:space-betw
                 </ul>
             </div>
 
-            <!-- بخش جدید: مزایای پرونسپاری برای کارفرمایان - عکس سمت چپ بیرون کادر -->
+            <!-- بخش جدید: مزایای پرونسپاری برای کارفرمایان - عکس سمت چپ -->
             <div class="outsourcing-benefits-wrapper">
                 <div class="outsourcing-image-left">
                     <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80&fit=crop" alt="تصویر پرونسپاری و منابع انسانی">
@@ -654,6 +655,7 @@ header .container { display:flex; align-items:center; justify-content:space-betw
 
         </div>
 
+        <!-- سایدبار -->
         <aside class="sidebar" aria-label="اطلاعات تماس دپارتمان HR">
             <div class="sidebar-widget">
                 <h4>ارتباط با دپارتمان HR</h4>
@@ -671,6 +673,7 @@ header .container { display:flex; align-items:center; justify-content:space-betw
     </div>
 </main>
 
+<!-- فوتر -->
 <footer class="site-footer" role="contentinfo">
     <div class="footer-grid">
         <div class="f-col f-links">
